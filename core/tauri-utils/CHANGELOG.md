@@ -1,5 +1,12 @@
 # Changelog
 
+## \[1.0.0-beta.3]
+
+- Fixes minimum window height being used as maximum height.
+  - [e3f99165](https://www.github.com/tauri-apps/tauri/commit/e3f9916526b226866137cb663e5cafab2b6a0e01) fix(core) minHeight being used as maxHeight ([#2247](https://www.github.com/tauri-apps/tauri/pull/2247)) on 2021-07-19
+- Inject the invoke key on regular `<script></script>` tags.
+  - [d0142e87](https://www.github.com/tauri-apps/tauri/commit/d0142e87ddf5231fd46e2cbe4769bb16f3fe01e9) fix(core): invoke key injection on regular JS scripts, closes [#2342](https://www.github.com/tauri-apps/tauri/pull/2342) ([#2344](https://www.github.com/tauri-apps/tauri/pull/2344)) on 2021-08-03
+
 ## \[1.0.0-beta.2]
 
 - Inject invoke key on `script` tags with `type="module"`.
