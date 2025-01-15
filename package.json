@@ -8,16 +8,28 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tauri-apps/tauri.git",
-    "directory": "tooling/cli.js"
+    "url": "https://github.com/tauri-apps/tauri.git"
   },
   "scripts": {
-    "format": "prettier --write --end-of-line=auto \"./**/*.{cjs,js,jsx,ts,tsx,html,css,json}\" --ignore-path .gitignore",
-    "postinstall": "husky install"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "eslint:check": "pnpm run -r eslint:check",
+    "ts:check": "pnpm run -r ts:check",
+    "build": "pnpm run -r build",
+    "build:api": "pnpm run --filter \"@tauri-apps/api\" build",
+    "build:cli": "pnpm run --filter \"@tauri-apps/cli\" build",
+    "build:cli:debug": "pnpm run --filter \"@tauri-apps/cli\" build:debug",
+    "test": "pnpm run -r test",
+    "example:api:dev": "pnpm run --filter \"api\" tauri dev"
   },
   "devDependencies": {
-    "covector": "^0.5.3",
-    "husky": "^6.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^3.4.2"
+  },
+  "packageManager": "pnpm@9.9.0",
+  "pnpm": {
+    "overrides": {
+      "cross-spawn@>=7.0.0 <7.0.5": ">=7.0.5",
+      "cookie@<0.7.0": ">=0.7.0"
+    }
   }
 }
